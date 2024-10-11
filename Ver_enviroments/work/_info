@@ -1,0 +1,990 @@
+m255
+K4
+z2
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R0
+R1
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R1
+R0
+R1
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R0
+R1
+R1
+R1
+Z2 !s12c _opt1
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R0
+R1
+R2
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+!s12c _opt
+R1
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 dD:/brain_insipred/Courses/acedemica/4-Verification/excer/coverage
+T_opt
+!s110 1728396798
+VXU]Ok1T@Q?GQ78`[C;MUQ3
+04 24 4 work FIFO_transaction_testing fast 0
+=1-845cf3c38d04-67053dfd-32d-526c
+R1
+Z4 !s12f OEM100
+Z5 !s12b OEM100
+Z6 !s124 OEM100
+Z7 o-quiet -auto_acc_if_foreign -work work
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2024.1;79
+R3
+T_opt1
+Z10 !s11d test_pkg D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 1 intf_fifo 1 D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 
+Z11 !s11d env_pkg D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 1 intf_fifo 1 D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 
+Z12 !s11d coverage_pkg D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 1 intf_fifo 1 D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 
+Z13 !s11d scb_pkg D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 1 intf_fifo 1 D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 
+Z14 !s11d Fifo_drv_pkg D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 1 intf_fifo 1 D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 
+Z15 !s11d Fifo_mon_pkg D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 1 intf_fifo 1 D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/work 
+!s110 1728590349
+V;N?Fn<jddQVHJ??VzQFG73
+Z16 04 6 4 work top_tb fast 0
+=1-845cf3c38d04-6708320d-a2-1b98
+R1
+R4
+R5
+R6
+R7
+R8
+n@_opt1
+R9
+R3
+T_opt2
+R10
+R11
+R12
+R13
+R14
+R15
+!s110 1728666479
+V:IH0`L]::7lGhI9IOaS_b0
+R16
+=1-845cf3c38d04-67095b6f-136-8c8
+R1
+R4
+R5
+R6
+o-quiet -auto_acc_if_foreign -work work -debugdb
+R8
+n@_opt2
+R9
+Xcoverage_pkg
+Z17 2FIFO_transaction.sv|FIFO_transaction_testing.sv|FIFO_with_intf.sv|coverage.sv|driver.sv|env.sv|interface.sv|mointer.sv|scoreboard.sv|test.sv|test_case_pkg.sv|testbench.sv
+Z18 !s115 intf_fifo
+Z19 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z20 DXx4 work 20 FIFO_transaction_pkg 0 22 L2Y=<>d^fOO6C35R9[5Bg2
+Z21 !s110 1728666473
+!i10b 1
+!s100 e6HWzQUW:7^GNAPZK9A<D2
+IKK4PJEegK8HDL>7cjg8Ga2
+S1
+Z22 dD:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments
+w1728662988
+8coverage.sv
+Fcoverage.sv
+!i122 1022
+Z23 L0 1 0
+VKK4PJEegK8HDL>7cjg8Ga2
+Z24 OL;L;2024.1;79
+r1
+!s85 0
+31
+Z25 !s108 1728666472.000000
+Z26 !s107 testbench.sv|test_case_pkg.sv|test.sv|scoreboard.sv|mointer.sv|interface.sv|env.sv|driver.sv|coverage.sv|FIFO_with_intf.sv|FIFO_transaction_testing.sv|FIFO_transaction.sv|
+Z27 !s90 -reportprogress|300|-sv|+cover|FIFO_transaction.sv|FIFO_transaction_testing.sv|FIFO_with_intf.sv|coverage.sv|driver.sv|env.sv|interface.sv|mointer.sv|scoreboard.sv|test.sv|test_case_pkg.sv|testbench.sv|
+!i113 0
+Z28 !s102 +cover
+Z29 o-sv +cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+Xenv_pkg
+R17
+R18
+R19
+R20
+Z30 DXx4 work 12 Fifo_mon_pkg 0 22 @0MTGGG8g@AZ:N]K4;3I?1
+Z31 DXx4 work 12 Fifo_drv_pkg 0 22 B`Da`BfoCz`5KX=m<`=QV2
+Z32 DXx4 work 15 test_passed_pkg 0 22 X8]SQHg8cYT>Df0VZI=eS0
+Z33 DXx4 work 7 scb_pkg 0 22 f5mGWaFgolEQhD3mi<a9R2
+Z34 DXx4 work 12 coverage_pkg 0 22 KK4PJEegK8HDL>7cjg8Ga2
+R21
+!i10b 1
+!s100 n;Uc@HRa;IRWB[j<U?D691
+IOD>lW[YzQD1hoeWh[Y89Z1
+S1
+R22
+w1728666303
+8env.sv
+Fenv.sv
+!i122 1022
+R23
+VOD>lW[YzQD1hoeWh[Y89Z1
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+vFIFO
+R17
+R19
+R21
+!i10b 1
+!s100 B@0?HAIQe0eAQ4A?fFce62
+IBKfa2TVejSom>MY>7:==23
+S1
+R22
+w1728654607
+8FIFO_with_intf.sv
+FFIFO_with_intf.sv
+!i122 1022
+L0 8 82
+Z35 VDg1SIo80bB@j0V0VzS_@n1
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+n@f@i@f@o
+XFifo_drv
+2D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/driver.sv
+R18
+R19
+Z36 DXx4 work 20 FIFO_transaction_pkg 0 22 55hoZ>774zhjCa?N`FA642
+!s110 1728462253
+!i10b 1
+!s100 QFo:9Poz>K7Jgd@?o0Y]G2
+IU]ObK1hRmXn_HAb<lo>;80
+S1
+Z37 dD:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments
+w1728462249
+8D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/driver.sv
+FD:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/driver.sv
+!i122 81
+R23
+VU]ObK1hRmXn_HAb<lo>;80
+R24
+r1
+!s85 0
+31
+Z38 !s108 1728462253.000000
+!s107 D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/driver.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/driver.sv|
+!i113 0
+Z39 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+n@fifo_drv
+XFifo_drv_pkg
+R17
+R18
+R19
+R20
+R21
+!i10b 1
+!s100 [Haez1`n>W3;3Eln@:?]P3
+IB`Da`BfoCz`5KX=m<`=QV2
+S1
+R22
+w1728654379
+8driver.sv
+Fdriver.sv
+!i122 1022
+R23
+VB`Da`BfoCz`5KX=m<`=QV2
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+n@fifo_drv_pkg
+XFifo_mon
+2D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/mointer.sv
+R18
+R19
+R36
+!s110 1728462254
+!i10b 1
+!s100 >APdG486]d>8VUQhloRoW0
+IlOXFNTEh>Vm<;MfkcYU>U3
+S1
+R37
+w1728462241
+8D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/mointer.sv
+FD:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/mointer.sv
+!i122 82
+R23
+VlOXFNTEh>Vm<;MfkcYU>U3
+R24
+r1
+!s85 0
+31
+R38
+!s107 D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/mointer.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/mointer.sv|
+!i113 0
+R39
+R8
+n@fifo_mon
+XFifo_mon_pkg
+R17
+R18
+R19
+R20
+R21
+!i10b 1
+!s100 =@B]MGgeija0jFJN_c<OJ1
+I@0MTGGG8g@AZ:N]K4;3I?1
+S1
+R22
+w1728662551
+8mointer.sv
+Fmointer.sv
+!i122 1022
+R23
+V@0MTGGG8g@AZ:N]K4;3I?1
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+n@fifo_mon_pkg
+XFIFO_transaction_pkg
+R17
+R19
+R21
+!i10b 1
+!s100 0l7`>gaj]JGHM17HHiMOB1
+IL2Y=<>d^fOO6C35R9[5Bg2
+S1
+R22
+w1728660366
+8FIFO_transaction.sv
+FFIFO_transaction.sv
+!i122 1022
+R23
+VL2Y=<>d^fOO6C35R9[5Bg2
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+n@f@i@f@o_transaction_pkg
+vFIFO_transaction_testing
+R17
+R19
+R20
+DXx4 work 32 FIFO_transaction_testing_sv_unit 0 22 U_68Z5gV4j9XiKRIazQiz2
+R21
+R35
+r1
+!s85 0
+!i10b 1
+!s100 L^M7fCjajlf2Na[UL5aWP2
+ImS6V8lISLl5o3JUol39nW0
+!s105 FIFO_transaction_testing_sv_unit
+S1
+R22
+Z40 w1728400014
+Z41 8FIFO_transaction_testing.sv
+Z42 FFIFO_transaction_testing.sv
+!i122 1022
+L0 4 19
+R24
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+n@f@i@f@o_transaction_testing
+XFIFO_transaction_testing_sv_unit
+R17
+R19
+R20
+R21
+VU_68Z5gV4j9XiKRIazQiz2
+r1
+!s85 0
+!i10b 1
+!s100 jFgW_S`UfmzMS00hkBW8V1
+IU_68Z5gV4j9XiKRIazQiz2
+!i103 1
+S1
+R22
+R40
+R41
+R42
+!i122 1022
+R23
+R24
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+n@f@i@f@o_transaction_testing_sv_unit
+Yintf_fifo
+R17
+R19
+R21
+!i10b 1
+!s100 HLhc<P@OfX>SgP;e0<:dS2
+Id2l]8J_4;68GOA=MaKChg0
+S1
+R22
+w1728653845
+8interface.sv
+Finterface.sv
+!i122 1022
+R23
+R35
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+vmailbox_test
+Z43 2D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv
+R19
+DXx4 work 12 test_sv_unit 0 22 ;FX`6[n<THWg^B3IAdM_]2
+Z44 !s110 1728463168
+R35
+r1
+!s85 0
+!i10b 1
+!s100 8BjL`l;DORnhJ=cg>m;fn1
+I4<K2QPlK5Y6hREUBo^D^m0
+!s105 test_sv_unit
+S1
+R37
+Z45 w1728463160
+Z46 8D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv
+Z47 FD:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv
+!i122 112
+L0 42 17
+R24
+31
+Z48 !s108 1728463168.000000
+Z49 !s107 D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv|
+Z50 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv|
+!i113 0
+R39
+R8
+Topt
+!s128 design.bin
+R10
+R11
+R12
+R13
+R14
+R15
+R21
+V4bh:^Ie[[oBGT0fomR^9_1
+R16
+R1
+R4
+R5
+R6
+o-fsmverbose btw -debug +designfile
+R8
+nopt
+R9
+R3
+Xscb_pkg
+R17
+R18
+R19
+R20
+R32
+R21
+!i10b 1
+!s100 VQD@e4Bj3QNP>7Q9lf9:Q2
+If5mGWaFgolEQhD3mi<a9R2
+S1
+R22
+w1728666023
+8scoreboard.sv
+Fscoreboard.sv
+!i122 1022
+R23
+Vf5mGWaFgolEQhD3mi<a9R2
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+Xtest_case_pkg
+2D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv
+R19
+!s110 1728583063
+!i10b 1
+!s100 A7<>i@9@SlD:Q^T0baHQ11
+I[FnbF]=:Wa8VE0A3e9<Z`0
+S1
+R22
+w1728582995
+8D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv
+FD:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv
+!i122 177
+R23
+V[FnbF]=:Wa8VE0A3e9<Z`0
+R24
+r1
+!s85 0
+31
+!s108 1728583063.000000
+!s107 D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv|
+!i113 0
+R39
+R8
+Xtest_passed_pkg
+R17
+R19
+R21
+!i10b 1
+!s100 aTndfJFKj_PX5]mG1ai[71
+IX8]SQHg8cYT>Df0VZI=eS0
+S1
+R22
+w1728654684
+8test_case_pkg.sv
+Ftest_case_pkg.sv
+!i122 1022
+R23
+VX8]SQHg8cYT>Df0VZI=eS0
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+Xtest_pkg
+R17
+R18
+R19
+R20
+R30
+R31
+R32
+R33
+R34
+Z51 DXx4 work 7 env_pkg 0 22 OD>lW[YzQD1hoeWh[Y89Z1
+R21
+!i10b 1
+!s100 3lVF?DLjHBd5]zWY;N>Wo2
+Il1fNC5jCEE<0FJd>PhZ^V3
+S1
+R22
+w1728666469
+8test.sv
+Ftest.sv
+!i122 1022
+R23
+Vl1fNC5jCEE<0FJd>PhZ^V3
+R24
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+Xtest_sv_unit
+R43
+R19
+R44
+V;FX`6[n<THWg^B3IAdM_]2
+r1
+!s85 0
+!i10b 1
+!s100 Q56FR@3hF2LllY];5fT_>0
+I;FX`6[n<THWg^B3IAdM_]2
+!i103 1
+S1
+R37
+R45
+R46
+R47
+!i122 112
+R23
+R24
+31
+R48
+R49
+R50
+!i113 0
+R39
+R8
+vtestbench
+2D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv
+R19
+DXx4 work 13 test_case_pkg 0 22 @``Nk4V?n6C[fBQ:8W@NP1
+!s110 1728583059
+!i10b 1
+!s100 238;<2Y5]ERf`T[S]D1e42
+IRZ_1`0:Kmd=jo43iJi9Jd3
+S1
+R22
+w1728583053
+8D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv
+FD:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv
+!i122 176
+L0 4 24
+R35
+R24
+r1
+!s85 0
+31
+!s108 1728583059.000000
+!s107 test_case_pkg.sv|D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test.sv|
+!i113 0
+R39
+R8
+Xtestbench_sv_unit
+R17
+R19
+R20
+R30
+R31
+R32
+R33
+R34
+R51
+Z52 DXx4 work 8 test_pkg 0 22 l1fNC5jCEE<0FJd>PhZ^V3
+Z53 DXx4 work 13 test_case_pkg 0 22 [FnbF]=:Wa8VE0A3e9<Z`0
+R21
+V@zVahi2@B;fFA4MlQF3de1
+r1
+!s85 0
+!i10b 1
+!s100 KP6FAEc2aD;LG=6:kTA502
+I@zVahi2@B;fFA4MlQF3de1
+!i103 1
+S1
+R22
+Z54 w1728654683
+Z55 8testbench.sv
+Z56 Ftestbench.sv
+!i122 1022
+R23
+R24
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8
+vtop_tb
+R17
+R19
+R20
+R30
+R31
+R32
+R33
+R34
+R51
+R52
+R53
+DXx4 work 17 testbench_sv_unit 0 22 @zVahi2@B;fFA4MlQF3de1
+R21
+R35
+r1
+!s85 0
+!i10b 1
+!s100 no7SMfbiDd7AL_R8A0L_C0
+IeeZAOZne897Y3O69Z?RNG3
+!s105 testbench_sv_unit
+S1
+R22
+R54
+R55
+R56
+!i122 1022
+L0 3 33
+R24
+31
+R25
+R26
+R27
+!i113 0
+R28
+R29
+R8

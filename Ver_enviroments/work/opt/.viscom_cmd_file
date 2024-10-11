@@ -1,0 +1,1 @@
+C:/questasim64_2024.1/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 2703648 -reportprogress 300 -stats=all,qis,verbose -fsmverbose btw -debug +designfile top_tb -o opt +__design_bin_path+D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments

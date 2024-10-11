@@ -1,0 +1,15 @@
+// to do  
+
+// driver take signal  from  test and driver it ti intf
+// mointer   take signal  from dut and drive it to socorboard and coverage 
+
+//env 
+
+
+// scoreboard
+
+
+ 
+//coverage 
+// test
+//tb 

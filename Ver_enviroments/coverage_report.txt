@@ -1,0 +1,937 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top_tb/intf_tb
+=== Design Unit: work.intf_fifo
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         86        85         1    98.83%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/intf_tb --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                             rst_n           0           1       50.00 
+
+Total Node Count     =         43 
+Toggled Node Count   =         42 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      98.83% (85 of 86 bins)
+
+=================================================================================
+=== Instance: /top_tb/dut
+=== Design Unit: work.FIFO
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        23        23         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top_tb/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FIFO_with_intf.sv
+------------------------------------IF Branch------------------------------------
+    20                                       202     Count coming in to IF
+    20              1                          2     
+    23              1                         38     
+    28              1                        162     
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                       162     Count coming in to IF
+    30              1                         94     
+    32              1                         68     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                       202     Count coming in to IF
+    38              1                          2     
+    41              1                         61     
+                                             139     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    48                                       149     Count coming in to IF
+    48              1                          2     
+    51              1                        147     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                       147     Count coming in to IF
+    52              1                         22     
+    54              1                         14     
+                                             111     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    59                                        37     Count coming in to IF
+    59              1                         13     
+    59              2                         24     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                        37     Count coming in to IF
+    60              1                          2     
+    60              2                         35     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    61                                        95     Count coming in to IF
+    61              1                          2     
+    61              2                         93     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    62                                        37     Count coming in to IF
+    62              1                          1     
+    62              2                         36     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                        37     Count coming in to IF
+    63              1                          3     
+    63              2                         34     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      18        17         1    94.44%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top_tb/dut --
+
+  File FIFO_with_intf.sv
+----------------Focused Condition View-------------------
+Line       23 Item    1  (intf.wr_en && (count < 8))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       30 Item    1  (intf.full & intf.wr_en)
+Condition totals: 1 of 2 input terms covered = 50.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   intf.full         N  '_0' not hit             Hit '_0'
+  intf.wr_en         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  intf.full_0           intf.wr_en                    
+  Row   2:          1  intf.full_1           intf.wr_en                    
+  Row   3:          1  intf.wr_en_0          intf.full                     
+  Row   4:          1  intf.wr_en_1          intf.full                     
+
+----------------Focused Condition View-------------------
+Line       41 Item    1  (intf.rd_en && (count != 0))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       52 Item    1  ((~intf.rd_en && intf.wr_en) && ~intf.full)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       54 Item    1  ((intf.rd_en && ~intf.wr_en) && ~intf.empty)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       59 Item    1  (count == 8)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       60 Item    1  (count == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       61 Item    1  (intf.empty && intf.rd_en)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       62 Item    1  (count == (8 - 2))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       63 Item    1  (count == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      26        26         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FIFO_with_intf.sv
+    19              1                        202     
+    21              1                          2     
+    24              1                         38     
+    25              1                         38     
+    26              1                         38     
+    29              1                        162     
+    31              1                         94     
+    33              1                         68     
+    37              1                        202     
+    39              1                          2     
+    42              1                         61     
+    43              1                         61     
+    47              1                        149     
+    49              1                          2     
+    53              1                         22     
+    55              1                         14     
+    59              1                         38     
+    60              1                         38     
+    61              1                         97     
+    62              1                         38     
+    63              1                         38     
+    68              1                        201     
+    70              1                        201     
+    74              1                        201     
+    78              1                        201     
+    82              1                        201     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         20        20         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb/dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         10 
+Toggled Node Count   =         10 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (20 of 20 bins)
+
+=================================================================================
+=== Instance: /top_tb
+=== Design Unit: work.top_tb
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         6         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top_tb --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File testbench.sv
+    16              1                        402     
+    16              2                        401     
+    21              1                          1     
+    24              1                          1     
+    32              1                          1     
+    33              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top_tb --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /FIFO_transaction_pkg
+=== Design Unit: work.FIFO_transaction_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13        13         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /FIFO_transaction_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File FIFO_transaction.sv
+    26              1                        402     
+    27              1                        402     
+    36              1                        402     
+    37              1                        402     
+    38              1                        402     
+    44              1                        399     
+    45              1                        399     
+    46              1                        399     
+    47              1                        399     
+    48              1                        399     
+    49              1                        399     
+    50              1                        399     
+    51              1                        399     
+
+=================================================================================
+=== Instance: /coverage_pkg
+=== Design Unit: work.coverage_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      4        na        na     0.00%
+        Coverpoints/Crosses         12        na        na        na
+            Covergroup Bins         36         0        36     0.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /coverage_pkg/coverage/cov_1                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         12          -                      
+    missing/total bins:                                    12         12          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_1_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_1_p2                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_1_p3                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Cross #cross__0#                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          6          -                      
+        missing/total bins:                                 6          6          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          8    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin full_almost_full                     0                     -    ZERO                 
+ TYPE /coverage_pkg/coverage/cov_2                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         12          -                      
+    missing/total bins:                                    12         12          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_2_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_2_p2                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_2_p3                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Cross #cross__0#                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          6          -                      
+        missing/total bins:                                 6          6          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          8    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin full_almost_empty                    0                     -    ZERO                 
+ TYPE /coverage_pkg/coverage/cov_3                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          8          -                      
+    missing/total bins:                                     8          8          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_3_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_3_p2                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Cross #cross__0#                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          4          -                      
+        missing/total bins:                                 4          4          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*>                                       0          1          4    ZERO                 
+ TYPE /coverage_pkg/coverage/cov_4                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          4          -                      
+    missing/total bins:                                     4          4          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_4_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          4          -                      
+        missing/total bins:                                 4          4          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin low                                             0          1          -    ZERO                 
+        bin lower_mid                                       0          1          -    ZERO                 
+        bin upper_mid                                       0          1          -    ZERO                 
+        bin high                                            0          1          -    ZERO                 
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      10        10         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /coverage_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File coverage.sv
+    49              1                          1     
+    50              1                          1     
+    51              1                          1     
+    52              1                          1     
+    57              1                          1     
+    61              1                        101     
+    64              1                        100     
+    65              1                        100     
+    66              1                        100     
+    67              1                        100     
+
+=================================================================================
+=== Instance: /test_passed_pkg
+=== Design Unit: work.test_passed_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       5         5         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_passed_pkg --
+NOTE: The modification timestamp for source file 'test_case_pkg.sv' has been altered since compilation.
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File test_case_pkg.sv
+    9               1                          4     
+    13              1                         96     
+    21              1                          1     
+    22              1                          1     
+    23              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        128        18       110    14.06%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_passed_pkg --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                              failed_test_count[6]           0           1       50.00 
+                           failed_test_count[7-31]           0           0        0.00 
+                              passed_test_count[2]           0           1       50.00 
+                           passed_test_count[3-31]           0           0        0.00 
+
+Total Node Count     =         64 
+Toggled Node Count   =          8 
+Untoggled Node Count =         56 
+
+Toggle Coverage      =      14.06% (18 of 128 bins)
+
+=================================================================================
+=== Instance: /scb_pkg
+=== Design Unit: work.scb_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        23        23         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /scb_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File scoreboard.sv
+------------------------------------IF Branch------------------------------------
+    32                                       100     Count coming in to IF
+    32              1                          1     
+    38              1                         99     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                        99     Count coming in to IF
+    40              1                         22     
+    44              1                         77     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                        77     Count coming in to IF
+    47              1                         37     
+    47              2                         40     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    51                                        99     Count coming in to IF
+    51              1                         29     
+                                              70     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    57                                        99     Count coming in to IF
+    57              1                         16     
+    59              1                          8     
+                                              75     All False Count
+Branch totals: 3 hits of 3 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                       100     Count coming in to IF
+    65              1                         63     
+    65              2                         37     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                       100     Count coming in to IF
+    66              1                          5     
+    66              2                         95     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    67                                        98     Count coming in to IF
+    67              1                          1     
+    67              2                         97     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                       100     Count coming in to IF
+    68              1                          3     
+    68              2                         97     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                       100     Count coming in to IF
+    69              1                          6     
+    69              2                         94     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    79                                       100     Count coming in to IF
+    79              1                          4     
+    90              1                         96     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      26        21         5    80.76%
+
+================================Condition Details================================
+
+Condition Coverage for instance /scb_pkg --
+
+  File scoreboard.sv
+----------------Focused Condition View-------------------
+Line       40 Item    1  (this.scb_trans.wr_en && (this.count < 8))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       47 Item    1  (this.full_expec && this.scb_trans.wr_en)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       51 Item    1  (this.scb_trans.rd_en && (this.count != 0))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       57 Item    1  (this.scb_trans.wr_en && ~this.scb_trans.rd_en && ~this.full_expec)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       59 Item    1  (~this.scb_trans.wr_en && this.scb_trans.rd_en && ~this.empty_expec)
+Condition totals: 3 of 3 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       65 Item    1  (this.count == 8)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       66 Item    1  (this.count == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       67 Item    1  (this.empty_expec && this.scb_trans.rd_en)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       68 Item    1  (this.count == (8 - 2))
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       69 Item    1  (this.count == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       79 Item    1  ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && (this.almostfull_expec === this.scb_trans.almostfull) && (this.underflow_expec === this.scb_trans.underflow) && (this.empty_expec === this.scb_trans.empty) && (this.almostempty_expec === this.scb_trans.almostempty))
+Condition totals: 3 of 8 input terms covered = 37.50%
+
+                                               Input Term   Covered  Reason for no coverage   Hint
+                                              -----------  --------  -----------------------  --------------
+        (this.data_out_expec === this.scb_trans.data_out)         Y
+            (this.wr_ack_expec === this.scb_trans.wr_ack)         Y
+        (this.overflow_expec === this.scb_trans.overflow)         N  '_0' not hit             Hit '_0'
+                (this.full_expec === this.scb_trans.full)         N  '_0' not hit             Hit '_0'
+    (this.almostfull_expec === this.scb_trans.almostfull)         N  '_0' not hit             Hit '_0'
+      (this.underflow_expec === this.scb_trans.underflow)         N  '_0' not hit             Hit '_0'
+              (this.empty_expec === this.scb_trans.empty)         Y
+  (this.almostempty_expec === this.scb_trans.almostempty)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                                                 Non-masking condition(s)      
+ ---------  ---------  --------------------                                       -------------------------     
+  Row   1:          1  (this.data_out_expec === this.scb_trans.data_out)_0        -                             
+  Row   2:          1  (this.data_out_expec === this.scb_trans.data_out)_1        ((this.wr_ack_expec === this.scb_trans.wr_ack) && ((this.overflow_expec === this.scb_trans.overflow) && ((this.full_expec === this.scb_trans.full) && ((this.almostfull_expec === this.scb_trans.almostfull) && ((this.underflow_expec === this.scb_trans.underflow) && ((this.empty_expec === this.scb_trans.empty) && (this.almostempty_expec === this.scb_trans.almostempty)))))))
+  Row   3:          1  (this.wr_ack_expec === this.scb_trans.wr_ack)_0            (this.data_out_expec === this.scb_trans.data_out)
+  Row   4:          1  (this.wr_ack_expec === this.scb_trans.wr_ack)_1            ((this.data_out_expec === this.scb_trans.data_out) && ((this.overflow_expec === this.scb_trans.overflow) && ((this.full_expec === this.scb_trans.full) && ((this.almostfull_expec === this.scb_trans.almostfull) && ((this.underflow_expec === this.scb_trans.underflow) && ((this.empty_expec === this.scb_trans.empty) && (this.almostempty_expec === this.scb_trans.almostempty)))))))
+  Row   5:    ***0***  (this.overflow_expec === this.scb_trans.overflow)_0        ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack))
+  Row   6:          1  (this.overflow_expec === this.scb_trans.overflow)_1        ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && ((this.full_expec === this.scb_trans.full) && ((this.almostfull_expec === this.scb_trans.almostfull) && ((this.underflow_expec === this.scb_trans.underflow) && ((this.empty_expec === this.scb_trans.empty) && (this.almostempty_expec === this.scb_trans.almostempty))))))
+  Row   7:    ***0***  (this.full_expec === this.scb_trans.full)_0                ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow))
+  Row   8:          1  (this.full_expec === this.scb_trans.full)_1                ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && ((this.almostfull_expec === this.scb_trans.almostfull) && ((this.underflow_expec === this.scb_trans.underflow) && ((this.empty_expec === this.scb_trans.empty) && (this.almostempty_expec === this.scb_trans.almostempty)))))
+  Row   9:    ***0***  (this.almostfull_expec === this.scb_trans.almostfull)_0    ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full))
+ Row   10:          1  (this.almostfull_expec === this.scb_trans.almostfull)_1    ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && ((this.underflow_expec === this.scb_trans.underflow) && ((this.empty_expec === this.scb_trans.empty) && (this.almostempty_expec === this.scb_trans.almostempty))))
+ Row   11:    ***0***  (this.underflow_expec === this.scb_trans.underflow)_0      ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && (this.almostfull_expec === this.scb_trans.almostfull))
+ Row   12:          1  (this.underflow_expec === this.scb_trans.underflow)_1      ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && (this.almostfull_expec === this.scb_trans.almostfull) && ((this.empty_expec === this.scb_trans.empty) && (this.almostempty_expec === this.scb_trans.almostempty)))
+ Row   13:          1  (this.empty_expec === this.scb_trans.empty)_0              ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && (this.almostfull_expec === this.scb_trans.almostfull) && (this.underflow_expec === this.scb_trans.underflow))
+ Row   14:          1  (this.empty_expec === this.scb_trans.empty)_1              ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && (this.almostfull_expec === this.scb_trans.almostfull) && (this.underflow_expec === this.scb_trans.underflow) && (this.almostempty_expec === this.scb_trans.almostempty))
+ Row   15:    ***0***  (this.almostempty_expec === this.scb_trans.almostempty)_0  ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && (this.almostfull_expec === this.scb_trans.almostfull) && (this.underflow_expec === this.scb_trans.underflow) && (this.empty_expec === this.scb_trans.empty))
+ Row   16:          1  (this.almostempty_expec === this.scb_trans.almostempty)_1  ((this.data_out_expec === this.scb_trans.data_out) && (this.wr_ack_expec === this.scb_trans.wr_ack) && (this.overflow_expec === this.scb_trans.overflow) && (this.full_expec === this.scb_trans.full) && (this.almostfull_expec === this.scb_trans.almostfull) && (this.underflow_expec === this.scb_trans.underflow) && (this.empty_expec === this.scb_trans.empty))
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      39        39         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /scb_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File scoreboard.sv
+    29              1                        101     
+    33              1                          1     
+    34              1                          1     
+    35              1                          1     
+    36              1                          1     
+    37              1                          1     
+    41              1                         22     
+    42              1                         22     
+    43              1                         22     
+    45              1                         77     
+    47              1                         77     
+    52              1                         29     
+    53              1                         29     
+    58              1                         16     
+    60              1                          8     
+    65              1                        100     
+    66              1                        100     
+    67              1                        100     
+    68              1                        100     
+    69              1                        100     
+    74              1                          1     
+    76              1                        101     
+    87              1                          4     
+    88              1                          4     
+    89              1                          4     
+    91              1                         96     
+    92              1                         96     
+    93              1                         96     
+    100             1                        100     
+    101             1                        100     
+    102             1                        100     
+    103             1                        100     
+    104             1                        100     
+    105             1                        100     
+    106             1                        100     
+    107             1                        100     
+    108             1                        100     
+    109             1                        100     
+    110             1                        100     
+
+=================================================================================
+=== Instance: /Fifo_drv_pkg
+=== Design Unit: work.Fifo_drv_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11        11         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /Fifo_drv_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File driver.sv
+    10              1                          1     
+    12              1                          1     
+    13              1                        200     
+    14              1                        200     
+    15              1                        200     
+    17              1                        200     
+    18              1                        199     
+    21              1                        199     
+    22              1                        199     
+    23              1                        199     
+    24              1                        199     
+
+=================================================================================
+=== Instance: /Fifo_mon_pkg
+=== Design Unit: work.Fifo_mon_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      21        21         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /Fifo_mon_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File mointer.sv
+    9               1                          1     
+    11              1                          1     
+    12              1                        201     
+    14              1                        201     
+    15              1                        200     
+    16              1                        200     
+    18              1                        200     
+    22              1                        200     
+    23              1                        200     
+    24              1                        200     
+    25              1                        200     
+    28              1                        200     
+    29              1                        200     
+    30              1                        200     
+    32              1                        200     
+    33              1                        200     
+    34              1                        200     
+    36              1                        200     
+    37              1                        200     
+    40              1                        200     
+    41              1                        200     
+
+=================================================================================
+=== Instance: /env_pkg
+=== Design Unit: work.env_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      17        17         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /env_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File env.sv
+    18              1                          1     
+    19              1                          1     
+    20              1                          1     
+    21              1                          1     
+    22              1                          1     
+    23              1                          1     
+    28              1                          1     
+    29              1                          1     
+    30              1                          1     
+    32              1                          1     
+    33              1                          1     
+    34              1                          1     
+    35              1                          1     
+    37              1                          1     
+    38              1                          1     
+    39              1                          1     
+    40              1                          1     
+
+=================================================================================
+=== Instance: /test_pkg
+=== Design Unit: work.test_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      27        27         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File test.sv
+    12              1                          1     
+    16              1                          1     
+    17              1                          1     
+    18              1                          1     
+    22              1                          1     
+    24              1                          1     
+    30              1                          1     
+    33              1                          1     
+    34              1                          1     
+    35              1                          1     
+    36              1                          1     
+    38              1                          1     
+    39              1                          1     
+    40              1                          1     
+    41              1                          1     
+    42              1                          1     
+    43              1                          1     
+    46              1                          1     
+    47              1                          1     
+    47              2                        198     
+    48              1                        198     
+    48              2                        198     
+    51              1                        198     
+    52              1                        198     
+    57              1                          1     
+    59              1                          1     
+    60              1                          1     
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /coverage_pkg/coverage/cov_1                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         12          -                      
+    missing/total bins:                                    12         12          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_1_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_1_p2                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_1_p3                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Cross #cross__0#                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          6          -                      
+        missing/total bins:                                 6          6          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          8    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin full_almost_full                     0                     -    ZERO                 
+ TYPE /coverage_pkg/coverage/cov_2                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0         12          -                      
+    missing/total bins:                                    12         12          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_2_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_2_p2                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_2_p3                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Cross #cross__0#                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          6          -                      
+        missing/total bins:                                 6          6          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*,*>                                     0          1          8    ZERO                 
+        Illegal and Ignore Bins:
+            ignore_bin full_almost_empty                    0                     -    ZERO                 
+ TYPE /coverage_pkg/coverage/cov_3                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          8          -                      
+    missing/total bins:                                     8          8          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_3_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Coverpoint cov_3_p2                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          2          -                      
+        missing/total bins:                                 2          2          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin auto[0]                                         0          1          -    ZERO                 
+        bin auto[1]                                         0          1          -    ZERO                 
+    Cross #cross__0#                                    0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          4          -                      
+        missing/total bins:                                 4          4          -                      
+        % Hit:                                          0.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <*,*>                                       0          1          4    ZERO                 
+ TYPE /coverage_pkg/coverage/cov_4                      0.00%        100          -    ZERO                 
+    covered/total bins:                                     0          4          -                      
+    missing/total bins:                                     4          4          -                      
+    % Hit:                                              0.00%        100          -                      
+    Coverpoint cov_4_p1                                 0.00%        100          -    ZERO                 
+        covered/total bins:                                 0          4          -                      
+        missing/total bins:                                 4          4          -                      
+        % Hit:                                          0.00%        100          -                      
+        bin low                                             0          1          -    ZERO                 
+        bin lower_mid                                       0          1          -    ZERO                 
+        bin upper_mid                                       0          1          -    ZERO                 
+        bin high                                            0          1          -    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 0.00%  COVERGROUP TYPES: 4
+
+Total Coverage By Instance (filtered view): 67.86%
+
