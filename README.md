@@ -1,9 +1,37 @@
 # FIFO Test Environment and Test Cases
 
 This repository contains the test environment and test cases designed for verifying the FIFO (First-In-First-Out) memory behavior. The environment includes a well-structured **testbench**, with components such as **drivers**, **monitors**, and **scoreboards** that facilitate a comprehensive verification flow. Below is a high-level description of the verification environment, including coverage, random testing, and the corresponding test cases.
+<details>  
+<summary>1- Synchronous FIFO Specifications</summary>
+
+### Parameters
+- **FIFO_WIDTH**: DATA in/out and memory word width (default: 16)
+- **FIFO_DEPTH**: Memory depth (default: 8)
+
+### Ports
+
+| Port Direction | Function                                                                                                                                         |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `data_in`      | Write Data: The input data bus used when writing the FIFO.                                                                                       |
+| `wr_en`        | Write Enable: If the FIFO is not full, asserting this signal causes data (on `data_in`) to be written into the FIFO.                             |
+| `rd_en`        | Read Enable: If the FIFO is not empty, asserting this signal causes data (on `data_out`) to be read from the FIFO.                               |
+| `clk`          | Clock signal.                                                                                                                                   |
+| `rst_n`        | Active low asynchronous reset.                                                                                                                  |
+| `data_out`     | Read Data: The sequential output data bus used when reading from the FIFO.                                                                      |
+| `full`         | Full Flag: Indicates that the FIFO is full. Write requests are ignored when the FIFO is full.                                                   |
+| `almostfull`   | Almost Full: Indicates that only one more write can be performed before the FIFO is full.                                                       |
+| `empty`        | Empty Flag: Indicates that the FIFO is empty. Read requests are ignored when the FIFO is empty.                                                 |
+| `almostempty`  | Almost Empty: Indicates that only one more read can be performed before the FIFO goes to empty.                                                 |
+| `overflow`     | Overflow: Indicates that a write request (`wr_en`) was rejected because the FIFO is full.                                                       |
+| `underflow`    | Underflow: Indicates that the read request (`rd_en`) was rejected because the FIFO is empty.                                                    |
+| `wr_ack`       | Write Acknowledge: Indicates that a write request (`wr_en`) has succeeded.                                                                      |
+
+**Note**: If both read and write enables are high and the FIFO is empty, only writing will take place, and vice versa if the FIFO is full.
+
+</details>
 
 <details>
-  <summary>1- FIFO Test plan</summary>
+  <summary>2- FIFO Test plan</summary>
 This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for Label, Description, Stimulus Generation,
   Functional Coverage, and Functionality Check. These test cases cover various conditions related to FIFO behavior, including states like almostfull, empty, overflow, and underflow.
 
@@ -35,7 +63,7 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <details>
-    <summary>2-Verification Environment Overview</summary>
+    <summary>3-Verification Environment Overview</summary>
 
 Our FIFO verification environment follows a layered architecture and consists of the following components:
 - **Test Bench Functionality Summary**
@@ -74,7 +102,7 @@ Our FIFO verification environment follows a layered architecture and consists of
  # Results
 
 <details>
-  <summary>3- Bugs Found</summary>
+  <summary>1- Bugs Found</summary>
 During the course of verification, the following bugs were identified and fixed:
 1. **Write Acknowledgment Not Resetting (`wr_ack`)**:
    - Issue: The `wr_ack` signal was not being reset properly after write operations, causing incorrect handshaking behavior.
@@ -90,6 +118,9 @@ During the course of verification, the following bugs were identified and fixed:
 
 These bugs were discovered through the use of constrained random testing and functional coverage, demonstrating the importance of coverage-driven verification in finding corner cases and subtle design issues.
 </details>
+
+2- images
+  
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
