@@ -74,7 +74,7 @@ Our FIFO verification environment follows a layered architecture and consists of
  # Results
 
 <details>
-  <summary>3- Bugs Found</summary>
+  <summary>1- Bugs Found</summary>
 During the course of verification, the following bugs were identified and fixed:
 1. **Write Acknowledgment Not Resetting (`wr_ack`)**:
    - Issue: The `wr_ack` signal was not being reset properly after write operations, causing incorrect handshaking behavior.
