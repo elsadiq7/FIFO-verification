@@ -2,56 +2,9 @@
 
 This repository contains the test environment and test cases designed for verifying the FIFO (First-In-First-Out) memory behavior. The environment includes a well-structured **testbench**, with components such as **drivers**, **monitors**, and **scoreboards** that facilitate a comprehensive verification flow. Below is a high-level description of the verification environment, including coverage, random testing, and the corresponding test cases.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .slider {
-            width: 300px;
-            height: 50px;
-            background-color: #ddd;
-            position: relative;
-            border-radius: 10px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: background-color 0.3s;
-        }
 
-        .slider:hover {
-            background-color: #bbb; /* Change color on hover */
-        }
 
-        .details {
-            display: none;
-            position: absolute;
-            top: 60px; /* Position below the slider */
-            left: 0;
-            width: 100%;
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .slider:hover .details {
-            display: block; /* Show details on hover */
-        }
-    </style>
-</head>
-<body>
-    <div class="slider">
-        Hover over me
-        <div class="details">
-            Here are the details that appear on hover.
-        </div>
-    </div>
-</body>
-</html>
-
-# FIFO Test Cases
+# 1-FIFO Test plan 
 
 This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for **Label**, **Description**, **Stimulus Generation**, **Functional Coverage**, and **Functionality Check**. These test cases cover various conditions related to FIFO behavior, including states like `almostfull`, `empty`, `overflow`, and `underflow`.
 
@@ -73,12 +26,48 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 | FIFO_12 | Check `!(intf.underflow === 1 && intf.overflow === 1)`.                                                | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
 | FIFO_13 | Check `!(intf.full === 1 && intf.empty === 1)`.                                                        | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
 
-
-## Verification Environment Overview
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+## 2-Verification Environment Overview
 
 Our FIFO verification environment follows a layered architecture and consists of the following components:
 
-1. **Testbench:** The testbench orchestrates the test and connects all the components in the environment. It generates various stimulus sequences, handles interactions between drivers and monitors, and checks the functional correctness of the DUT (Device Under Test) through a golden model comparison.
+# FIFO Test Bench Functionality Summary 📝
+
+## 1. **Testbench Overview**
+The testbench orchestrates the test and connects all the components in the environment. It generates various stimulus sequences, handles interactions between drivers and monitors, and checks the functional correctness of the DUT (Device Under Test) through a golden model comparison.
+
+## Key Functions
+
+### 2. **Clock Signal Generation ⏰**
+- Generates a clock signal (`clk`) that toggles every 10 time units to synchronize the operations of the FIFO.
+
+### 3. **FIFO Model and Pointer Initialization 🛠️**
+- Defines golden model FIFO memory and pointers, including:
+  - **Memory**: Stores FIFO data for comparison.
+  - **Write Pointer**: Tracks the position for writing data.
+  - **Read Pointer**: Tracks the position for reading data.
+  - **Count**: Indicates the number of elements currently in the FIFO.
+
+### 4. **DUT Instantiation**
+- Instantiates the Design Under Test (DUT) FIFO module and connects it to the test bench.
+
+### 5. **Test Class Initialization 📚**
+- Creates an instance of the test class that encapsulates the testing logic and scenarios.
+
+### 6. **Simulation Setup and Execution 🚀**
+- Sets up the simulation environment and runs the test using a fork-join construct, which allows simultaneous operations for dynamic updates.
+
+### 7. **Dynamic Data Assignment 🔄**
+- Continuously updates golden model values and DUT outputs during simulation:
+  - Copies data from the test environment to the golden model.
+  - Ensures synchronization between the golden model and DUT's current state.
+
+### 8. **Waveform Dumping 📊**
+- Dumps simulation waveforms to a VCD file for analysis and debugging, allowing users to visualize the signal behavior over time.
+
+
+
+
 
 2. **Driver:** The driver sends transactions to the DUT by converting higher-level sequences into low-level signals. It initiates read and write operations on the FIFO and controls the enable signals (`wr_en`, `rd_en`) based on stimulus generation.
 
