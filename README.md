@@ -33,11 +33,11 @@ Our FIFO verification environment follows a layered architecture and consists of
 
 # FIFO Test Bench Functionality Summary 📝
 
-## 1. **Testbench Overview**
+
+  <summary> 1. **Testbench Overview**</summary>
+  ## 1. **Testbench Overview**
 The testbench orchestrates the test and connects all the components in the environment. It generates various stimulus sequences, handles interactions between drivers and monitors, and checks the functional correctness of the DUT (Device Under Test) through a golden model comparison.
 <details>
-  <summary>Click to expand!</summary>
-  
  ## Key Functions
 
 ### 1. **Clock Signal Generation ⏰**
