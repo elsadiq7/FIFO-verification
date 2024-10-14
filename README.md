@@ -27,17 +27,19 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 | FIFO_13 | Check `!(intf.full === 1 && intf.empty === 1)`.                                                        | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
 ## 2-Verification Environment Overview
 
 Our FIFO verification environment follows a layered architecture and consists of the following components:
 
 # FIFO Test Bench Functionality Summary 📝
 
-
-  <summary> 1. **Testbench Overview**</summary>
+<summary> 1. **Testbench Overview**</summary> <details>
   ## 1. **Testbench Overview**
 The testbench orchestrates the test and connects all the components in the environment. It generates various stimulus sequences, handles interactions between drivers and monitors, and checks the functional correctness of the DUT (Device Under Test) through a golden model comparison.
-<details>
+
  ## Key Functions
 
 ### 1. **Clock Signal Generation ⏰**
