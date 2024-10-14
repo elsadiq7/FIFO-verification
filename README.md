@@ -67,7 +67,7 @@ Our FIFO verification environment follows a layered architecture and consists of
 
 - **Test**
   - Defines scenarios to verify DUT behavior under different conditions, including boundary cases, overflow/underflow conditions, and normal operations.
-<details>
+</details>
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
