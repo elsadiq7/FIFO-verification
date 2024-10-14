@@ -123,11 +123,23 @@ These bugs were discovered through the use of constrained random testing and fun
 <details>
   <summary>2- images</summary>
 
-  - ![test case example](https://github.com/elsadiq7/FIFO-verification/blob/main/images/test_exmple.png).
-  - ![passed \& failed test caeses](https://github.com/elsadiq7/FIFO-verification/blob/main/images/test_cases.png).
-  - ![assserations coverage](https://github.com/elsadiq7/FIFO-verification/blob/main/images/assertions.png).
-  - ![group coverages](https://github.com/elsadiq7/FIFO-verification/blob/main/images/group_coverage.png).
-  - ![code coverage](https://github.com/elsadiq7/FIFO-verification/blob/main/images/code_coverage.png).
+### Images
+
+- **Test Case Example**  
+  ![test case example](https://github.com/elsadiq7/FIFO-verification/blob/main/images/test_exmple.png "Test Case Example")
+
+- **Passed & Failed Test Cases**  
+  ![passed \& failed test cases](https://github.com/elsadiq7/FIFO-verification/blob/main/images/test_cases.png "Passed & Failed Test Cases")
+
+- **Assertions Coverage**  
+  ![assertions coverage](https://github.com/elsadiq7/FIFO-verification/blob/main/images/assertions.png "Assertions Coverage")
+
+- **Group Coverages**  
+  ![group coverages](https://github.com/elsadiq7/FIFO-verification/blob/main/images/group_coverage.png "Group Coverages")
+
+- **Code Coverage**  
+  ![code coverage](https://github.com/elsadiq7/FIFO-verification/blob/main/images/code_coverage.png "Code Coverage")
+
 </details>
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
