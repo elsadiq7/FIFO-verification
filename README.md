@@ -4,9 +4,6 @@ This repository contains the test environment and test cases designed for verify
 
 <details>
   <summary>1- FIFO Test plan</summary>
-  
- # 1-FIFO Test plan 
-
 This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for **Label**, **Description**, **Stimulus Generation**, **Functional Coverage**, and **Functionality Check**. These test cases cover various conditions related to FIFO behavior, including states like `almostfull`, `empty`, `overflow`, and `underflow`.
 
 ## Test Case Overview
@@ -35,16 +32,23 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 <details>
 <summary>2-Verification Environment Overview</summary>
 
 Our FIFO verification environment follows a layered architecture and consists of the following components:
-
 - **Test Bench Functionality Summary**
     - The testbench orchestrates the test and connects all components in the environment, generating stimulus sequences, handling driver and monitor interactions, and verifying the DUT (Device Under Test) through golden model comparison
+ 
+- **FIFO Transaction**
+   - The `FIFO_transaction_pkg` package defines a transaction class that models the behavior of individual FIFO operations (read/write transactions). The transaction class incorporates randomization to test the FIFO under various conditions.
+
+- **Functional Coverage**
+  -  The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package ![coverage report](.
+      
 - **Driver**
   - Sends transactions to the DUT by converting higher-level sequences into low-level signals, initiating read and write operations and controlling enable signals (`wr_en`, `rd_en`).
-
+    
 - **Monitor**
   - Passively observes DUT output, capturing signals such as `data_out`, `wr_ack`, `overflow`, etc., and checks expected behavior.
 
@@ -62,92 +66,30 @@ Our FIFO verification environment follows a layered architecture and consists of
 
 - **Test**
   - Defines scenarios to verify DUT behavior under different conditions, including boundary cases, overflow/underflow conditions, and normal operations.
- 
-- **FIFO Transaction**
+<details>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-   - The `FIFO_transaction_pkg` package defines a transaction class that models the behavior of individual FIFO operations (read/write transactions). The transaction class incorporates randomization to test the FIFO under various conditions.
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-
-
-# Functional Coverage
-  -  The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package.
-
-  
-  - Coverage Groups:
-         - Write Enable, Full, and Almost Full Coverage (`wr_full_coverage`):This group tracks how the write enable (`wr_en`) signal interacts with the `full` and `almostfull` status signals. It also monitors the cross-coverage between these signals to ensure full exploration of edge cases.
-
-- **Coverage Points:**
-  - `wr_en_cp`: Coverage point for the write enable signal.
-  - `full_cp`: Coverage point for the `full` signal.
-  - `almost_full_cp`: Coverage point for the `almostfull` signal.
-
-- **Cross Coverage:** 
-  Crosses `wr_en_cp`, `full_cp`, and `almost_full_cp`, ensuring that combinations like writing to a full FIFO are handled.
-
-### 2. Read Enable, Empty, and Almost Empty Coverage (`rd_empty_coverage`)
-This group tracks the interaction between the read enable (`rd_en`) signal and the `empty` and `almostempty` status signals. It ensures proper behavior when the FIFO is nearly or completely empty.
-
-- **Coverage Points:**
-  - `rd_en_cp`: Coverage point for the read enable signal.
-  - `empty_cp`: Coverage point for the `empty` signal.
-  - `almost_empty_cp`: Coverage point for the `almostempty` signal.
-
-- **Cross Coverage:** 
-  Crosses `rd_en_cp`, `empty_cp`, and `almost_empty_cp`, covering situations like attempting to read from an empty FIFO.
-
-### 3. Read/Write Enable Cross Coverage (`rd_wr_enable_cross_coverage`)
-This group captures the cross-coverage between read enable (`rd_en`) and write enable (`wr_en`) signals to explore how these signals interact under different operational conditions.
-
-### 4. Data Input Range Coverage (`data_input_range_coverage`)
-This group captures the range of values for the data input (`data_in`) signal, ensuring that all potential input ranges are tested.
-
-- **Data Range Bins:**
-  - `low`: Values from 0 to 16383.
-  - `lower_mid`: Values from 16384 to 32767.
-  - `upper_mid`: Values from 32768 to 49151.
-  - `high`: Values from 49152 to 65535.
-
-### 5. Reset Signal Coverage (`reset_coverage`)
-Tracks the occurrences of the reset signal (`rst_n`) to ensure proper behavior when the system is reset.
-  
-</details>
-
-
-
-
-
-</details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Bugs Found:
-
+  <summary>3- Bugs Found</summary>
 During the course of verification, the following bugs were identified and fixed:
-
 1. **Write Acknowledgment Not Resetting (`wr_ack`)**:
    - Issue: The `wr_ack` signal was not being reset properly after write operations, causing incorrect handshaking behavior.
    - Fix: Ensured that `intf.wr_ack <= 0;` was explicitly reset after write transactions.
 
 2. **Overflow Signal Not Resetting (`overflow`)**:
    - Issue: The `overflow` signal was not being reset after handling an overflow condition, leading to incorrect overflow detection in subsequent cycles.
-   - Fix: Modified the design to explicitly reset `intf.overflow <= 0;` after handling an overflow.
+   - Fix: Modified the design to explicitly reset `intf.overflow <= 0;` when reseting handling an overflow.
 
 3. **Read Pointer and Write Pointer Logic Issue**:
    - Issue: There was a logic error where the design did not properly check the condition `rd_ptr != wr_ptr` before allowing certain operations, which led to erroneous data reads/writes when pointers were equal.
    - Fix: Incorporated a check to ensure that `rd_ptr != wr_ptr` before proceeding with read/write operations to avoid erroneous FIFO operations.
 
 These bugs were discovered through the use of constrained random testing and functional coverage, demonstrating the importance of coverage-driven verification in finding corner cases and subtle design issues.
+</details>
 
-## Functional and Random Testing
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-Functional coverage and randomization work together to ensure that all critical scenarios are tested. The combination of constrained random stimulus generation from `FIFO_transaction_pkg` and comprehensive coverage analysis from `coverage_pkg` provides robust verification of the FIFO's functionality.
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
