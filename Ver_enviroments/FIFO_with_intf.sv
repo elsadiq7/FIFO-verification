@@ -19,6 +19,8 @@ reg [max_fifo_addr:0] count;
 always @(posedge intf.clk or negedge intf.rst_n) begin
 	if (!intf.rst_n) begin
 		wr_ptr <= 0;
+		intf.wr_ack <= 0;            //modified 
+		intf.overflow<=0;              //modified 
 	end
 	else if (intf.wr_en && count < intf.FIFO_DEPTH) begin
 		mem[wr_ptr] <= intf.data_in;
@@ -38,7 +40,7 @@ always @(posedge intf.clk or negedge intf.rst_n) begin
 	if (!intf.rst_n) begin
 		rd_ptr <= 0;
 	end
-	else if (intf.rd_en && count != 0) begin
+	else if (intf.rd_en && !intf.empty &&rd_ptr!=wr_ptr) begin  //modfied 
 		intf.data_out <= mem[rd_ptr];
 		rd_ptr <= rd_ptr + 1;
 	end
@@ -64,24 +66,35 @@ assign intf.almostempty = (count == 1)? 1 : 0;
 
 
 
-// Assertion checks for FIFO conditions, now clocked
-always @(posedge intf.clk) begin
-    // Assertion 1: Check that full and empty are not true at the same time
-    p1: assert property (!(intf.full===1 && intf.empty===1)) 
-        else $display("Error: full && empty = 1");
+// Property-based assertions for FIFO conditions
 
-    // Assertion 2: Check that underflow and overflow are not true at the same time
-    p2: assert property (!(intf.underflow===1 && intf.overflow===1)) 
-        else $display("Error: underflow && overflow = 1");
+property p1_full_not_empty;
+    @(negedge  intf.clk) !(intf.full === 1 && intf.empty === 1);
+endproperty
 
-    // Assertion 3: Check that almost full and full are not true at the same time
-    p3: assert property (!(intf.almostfull===1 && intf.full===1)) 
-        else $display("Error: almostfull && full = 1");
+assert property(p1_full_not_empty) 
+    else $display("@%0t:Error: full && empty = 1",$time);
 
-    // Assertion 4: Check that almost empty and empty are not true at the same time
-    p4: assert property (!(intf.almostempty===1 && intf.empty===1)) 
-        else $display("Error: almostempty && empty = 1");
-end
+property p2_no_underflow_overflow;
+    @(negedge intf.clk) !(intf.underflow === 1 && intf.overflow === 1);
+endproperty
+
+assert property(p2_no_underflow_overflow) 
+    else $display("@%0t:Error: underflow && overflow = 1",$time);
+
+property p3_almostfull_not_full;
+    @(posedge intf.clk) !(intf.almostfull === 1 && intf.full === 1);
+endproperty
+
+assert property(p3_almostfull_not_full) 
+    else $display("@%0t:Error: almostfull && full = 1",$time);
+
+property p4_almostempty_not_empty;
+    @(posedge intf.clk) !(intf.almostempty === 1 && intf.empty === 1);
+endproperty
+
+assert property(p4_almostempty_not_empty) 
+    else $display("@%0t:Error: almostempty && empty = 1",$time);
 
 
 

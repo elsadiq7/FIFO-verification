@@ -13,7 +13,7 @@ package FIFO_transaction_pkg;
 
         // Random logic for reset, write enable, and read enable
         rand logic   wr_en, rd_en;
-        logic rst_n;
+        rand logic rst_n;
         // Logic for data output and various status signals
         logic  [FIFO_WIDTH-1:0] data_out;
         logic  wr_ack, overflow;

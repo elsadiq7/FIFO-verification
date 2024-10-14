@@ -30,22 +30,21 @@ package test_pkg;
         FIFO_transaction trans = new();
         
 
-        @(negedge intf_test_me.clk);
-        $display("%0t: Starting reset...", $time);
-        trans.rst_n = 0;
-        test_mbx.put(trans);
+        // @(negedge intf_test_me.clk);
+        // $display("%0t: Starting reset...", $time);
+        // trans.rst_n = 0;
+        // test_mbx.put(trans);
 
-        @(negedge intf_test_me.clk);  // Hold reset low for 2 clock cycles
-        trans.i=1;
-        $display("%0t: Ending reset...", $time);
-        trans.rst_n = 1;
-        test_mbx.put(trans);
-         @(negedge intf_test_me.clk);  // Hold reset low for 2 clock cycles
+        // @(negedge intf_test_me.clk);  // Hold reset low for 2 clock cycles
+        // trans.i=1;
+        // $display("%0t: Ending reset...", $time);
+        // trans.rst_n = 1;
+        // test_mbx.put(trans);
 
 
         $display("T=%0t [Test] Starting stimulus ...", $time);
-        for (int i=2;i<200;i++) begin
-            @(posedge   intf_test_me.clk) ; #3
+        for (int i=0;i<50000;i++) begin
+            @(negedge intf_test_me.clk) ; 
             assert(trans.randomize())
             else $display("%0t:Error in randomization test:%0d",$time,i);
             trans.i=i;

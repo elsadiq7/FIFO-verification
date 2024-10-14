@@ -1,13 +1,36 @@
-D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_transaction.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_transaction.sv
+D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/scoreboard.sv {0 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/scoreboard.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package scb_pkg
+-- Importing package FIFO_transaction_pkg
+-- Importing package test_passed_pkg
+** Error: (vlog-13069) D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/scoreboard.sv(71): near "endtask": syntax error, unexpected endtask.
+** Error: (vlog-13069) D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/scoreboard.sv(102): near "endtask": syntax error, unexpected endtask.
+** Error: (vlog-13069) D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/scoreboard.sv(117): near "endtask": syntax error, unexpected endtask.
+
+} {6.0 9.0} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/mointer.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/mointer.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package Fifo_mon_pkg
+-- Importing package FIFO_transaction_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_transaction.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_transaction.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
 -- Compiling package FIFO_transaction_pkg
 
 Top level modules:
 	--none--
 
-} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv
+} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/env.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/env.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
--- Compiling package test_passed_pkg
+-- Compiling package env_pkg
+-- Importing package Fifo_mon_pkg
+-- Importing package FIFO_transaction_pkg
+-- Importing package Fifo_drv_pkg
+-- Importing package scb_pkg
+-- Importing package test_passed_pkg
+-- Importing package coverage_pkg
 
 Top level modules:
 	--none--
@@ -20,8 +43,24 @@ QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
 Top level modules:
 	--none--
 
+} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/test_case_pkg.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package test_passed_pkg
+
+Top level modules:
+	--none--
+
+} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/coverage.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/coverage.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling package coverage_pkg
+-- Importing package FIFO_transaction_pkg
+
+Top level modules:
+	--none--
+
 } {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_transaction_testing.sv {2 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_transaction_testing.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Warning: D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_transaction_testing.sv(1): (vlog-13233) Design unit "FIFO_transaction_testing_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
 -- Compiling package FIFO_transaction_testing_sv_unit
 -- Importing package FIFO_transaction_pkg
 -- Compiling module FIFO_transaction_testing
@@ -30,15 +69,9 @@ QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
 Top level modules:
 	FIFO_transaction_testing
 
-} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_with_intf.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/FIFO_with_intf.sv
+} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/testbench.sv {2 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/testbench.sv
 QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
--- Compiling module FIFO
-
-Top level modules:
-	FIFO
-
-} {} {}} D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/testbench.sv {1 {vlog -work work -vopt -sv -stats=none D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/testbench.sv
-QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Warning: D:/1-brain_insipred/Courses/acedemica/4-Verification/projects/FIFO-verification/Ver_enviroments/testbench.sv(1): (vlog-13233) Design unit "testbench_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
 -- Compiling package testbench_sv_unit
 -- Importing package test_pkg
 -- Importing package FIFO_transaction_pkg
@@ -48,7 +81,6 @@ QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
 -- Importing package scb_pkg
 -- Importing package test_passed_pkg
 -- Importing package coverage_pkg
--- Importing package test_case_pkg
 -- Compiling module top_tb
 
 Top level modules:

@@ -4,6 +4,7 @@ package Fifo_drv_pkg;
 
 		mailbox driver_mailbox;
 		virtual intf_fifo drv_intf;
+	
 
 		task run();
 
@@ -22,7 +23,6 @@ package Fifo_drv_pkg;
                drv_intf.wr_en=drv_tran.wr_en;
                drv_intf.rd_en=drv_tran.rd_en;
                drv_intf.data_in=drv_tran.data_in;
-               
 
 			end
 		endtask : run
