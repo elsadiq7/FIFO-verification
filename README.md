@@ -71,8 +71,9 @@ Our FIFO verification environment follows a layered architecture and consists of
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+ # Results
+
 <details>
-  <details>
   <summary>3- Bugs Found</summary>
 During the course of verification, the following bugs were identified and fixed:
 1. **Write Acknowledgment Not Resetting (`wr_ack`)**:
