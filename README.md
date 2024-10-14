@@ -116,3 +116,25 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 1. **Stimulus Generation:** Conditions for clock signals (`posedge`, `negedge`), enable signals (`wr_en`, `rd_en`), and their percentages of high and low states.
 2. **Functional Coverage:** Ensures cross-coverage between key signals like `wr_en`, `rd_en`, and their interaction with `empty`, `almostempty`, `almostfull`, and `full` states.
 3. **Functionality Check:** Describes checks against a golden model or assertions on error conditions.
+
+### Bugs Found:
+
+During the course of verification, the following bugs were identified and fixed:
+
+1. **Write Acknowledgment Not Resetting (`wr_ack`)**:
+   - Issue: The `wr_ack` signal was not being reset properly after write operations, causing incorrect handshaking behavior.
+   - Fix: Ensured that `intf.wr_ack <= 0;` was explicitly reset after write transactions.
+
+2. **Overflow Signal Not Resetting (`overflow`)**:
+   - Issue: The `overflow` signal was not being reset after handling an overflow condition, leading to incorrect overflow detection in subsequent cycles.
+   - Fix: Modified the design to explicitly reset `intf.overflow <= 0;` after handling an overflow.
+
+3. **Read Pointer and Write Pointer Logic Issue**:
+   - Issue: There was a logic error where the design did not properly check the condition `rd_ptr != wr_ptr` before allowing certain operations, which led to erroneous data reads/writes when pointers were equal.
+   - Fix: Incorporated a check to ensure that `rd_ptr != wr_ptr` before proceeding with read/write operations to avoid erroneous FIFO operations.
+
+These bugs were discovered through the use of constrained random testing and functional coverage, demonstrating the importance of coverage-driven verification in finding corner cases and subtle design issues.
+
+## Functional and Random Testing
+
+Functional coverage and randomization work together to ensure that all critical scenarios are tested. The combination of constrained random stimulus generation from `FIFO_transaction_pkg` and comprehensive coverage analysis from `coverage_pkg` provides robust verification of the FIFO's functionality.
