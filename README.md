@@ -34,15 +34,17 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-
+<details>
+  <summary>Click to expand!</summary>
+  
 ## 2-Verification Environment Overview
 
 Our FIFO verification environment follows a layered architecture and consists of the following components:
 
 # FIFO Test Bench Functionality Summary 📝
 
-<summary> Testbench Overview</summary> <details>
 The testbench orchestrates the test and connects all the components in the environment. It generates various stimulus sequences, handles interactions between drivers and monitors, and checks the functional correctness of the DUT (Device Under Test) through a golden model comparison.
 
  ## Key Functions
@@ -75,7 +77,6 @@ The testbench orchestrates the test and connects all the components in the envir
 - Dumps simulation waveforms to a VCD file for analysis and debugging, allowing users to visualize the signal behavior over time.
 
   
-</details>
 
 
 
@@ -95,6 +96,12 @@ The testbench orchestrates the test and connects all the components in the envir
 7. **Stimulus Generation:** Stimulus sequences are used to drive the FIFO through various test scenarios. Constraints are applied on signals like `wr_en`, `rd_en`, `rst`, and `clk` to ensure that the FIFO is exercised under a range of conditions.
 
 8. **Test:** The test defines specific scenarios to verify the DUT's behavior under different conditions, such as boundary cases (full/empty states), overflow/underflow conditions, and normal operational scenarios. Tests check for correct functionality and ensure that edge cases are handled gracefully.
+  
+</details>
+
+
+
+
 
 ## FIFO Transaction Package (`FIFO_transaction_pkg`)
 
