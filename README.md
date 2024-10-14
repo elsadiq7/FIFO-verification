@@ -44,7 +44,7 @@ Our FIFO verification environment follows a layered architecture and consists of
    - The `FIFO_transaction_pkg` package defines a transaction class that models the behavior of individual FIFO operations (read/write transactions). The transaction class incorporates randomization to test the FIFO under various conditions.
 
 - **Functional Coverage**
-  -  The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package ![coverage report](.
+  -  The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package ![coverage report](https://github.com/elsadiq7/FIFO-verification/blob/main/Ver_enviroments/sim.log).
       
 - **Driver**
   - Sends transactions to the DUT by converting higher-level sequences into low-level signals, initiating read and write operations and controlling enable signals (`wr_en`, `rd_en`).
