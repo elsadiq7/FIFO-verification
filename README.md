@@ -69,43 +69,55 @@ Our FIFO verification environment follows a layered architecture and consists of
 
 
 
-- **Functional Coverage**
+# Functional Coverage
+The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package.
+<details>
+  <summary>Click to expand!</summary>
+  
+## Coverage Groups
 
-   - The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package.
+### 1. Write Enable, Full, and Almost Full Coverage (`wr_full_coverage`)
+This group tracks how the write enable (`wr_en`) signal interacts with the `full` and `almostfull` status signals. It also monitors the cross-coverage between these signals to ensure full exploration of edge cases.
 
-- Coverage Groups:
-   - **Write Enable, Full, and Almost Full Coverage (`wr_full_coverage`):**
-   This group tracks how the write enable (`wr_en`) signal interacts with the `full` and `almostfull` status signals. It also tracks the cross-coverage between these signals to ensure full exploration of edge cases.
+- **Coverage Points:**
+  - `wr_en_cp`: Coverage point for the write enable signal.
+  - `full_cp`: Coverage point for the `full` signal.
+  - `almost_full_cp`: Coverage point for the `almostfull` signal.
 
-   - `wr_en_cp`: Coverage point for the write enable signal.
-   - `full_cp`: Coverage point for the `full` signal.
-   - `almost_full_cp`: Coverage point for the `almostfull` signal.
+- **Cross Coverage:** 
+  Crosses `wr_en_cp`, `full_cp`, and `almost_full_cp`, ensuring that combinations like writing to a full FIFO are handled.
 
-   **Cross Coverage:** Crosses `wr_en_cp`, `full_cp`, and `almost_full_cp`, ensuring that combinations like writing to a full FIFO are handled.
+### 2. Read Enable, Empty, and Almost Empty Coverage (`rd_empty_coverage`)
+This group tracks the interaction between the read enable (`rd_en`) signal and the `empty` and `almostempty` status signals. It ensures proper behavior when the FIFO is nearly or completely empty.
 
-2. **Read Enable, Empty, and Almost Empty Coverage (`rd_empty_coverage`):**
-   This group tracks the interaction between the read enable (`rd_en`) signal and the `empty` and `almostempty` status signals. It ensures proper behavior when the FIFO is nearly or completely empty.
+- **Coverage Points:**
+  - `rd_en_cp`: Coverage point for the read enable signal.
+  - `empty_cp`: Coverage point for the `empty` signal.
+  - `almost_empty_cp`: Coverage point for the `almostempty` signal.
 
-   - `rd_en_cp`: Coverage point for the read enable signal.
-   - `empty_cp`: Coverage point for the `empty` signal.
-   - `almost_empty_cp`: Coverage point for the `almostempty` signal.
+- **Cross Coverage:** 
+  Crosses `rd_en_cp`, `empty_cp`, and `almost_empty_cp`, covering situations like attempting to read from an empty FIFO.
 
-   **Cross Coverage:** Crosses `rd_en_cp`, `empty_cp`, and `almost_empty_cp`, covering situations like attempting to read from an empty FIFO.
+### 3. Read/Write Enable Cross Coverage (`rd_wr_enable_cross_coverage`)
+This group captures the cross-coverage between read enable (`rd_en`) and write enable (`wr_en`) signals to explore how these signals interact under different operational conditions.
 
-3. **Read/Write Enable Cross Coverage (`rd_wr_enable_cross_coverage`):**
-   This group captures the cross-coverage between read enable (`rd_en`) and write enable (`wr_en`) signals to explore how these signals interact under different operational conditions.
+### 4. Data Input Range Coverage (`data_input_range_coverage`)
+This group captures the range of values for the data input (`data_in`) signal, ensuring that all potential input ranges are tested.
 
-4. **Data Input Range Coverage (`data_input_range_coverage`):**
-   This group captures the range of values for the data input (`data_in`) signal, ensuring that all potential input ranges are tested.
+- **Data Range Bins:**
+  - `low`: Values from 0 to 16383.
+  - `lower_mid`: Values from 16384 to 32767.
+  - `upper_mid`: Values from 32768 to 49151.
+  - `high`: Values from 49152 to 65535.
 
-   - **Data Range Bins:** 
-     - `low`: Values from 0 to 16383.
-     - `lower_mid`: Values from 16384 to 32767.
-     - `upper_mid`: Values from 32768 to 49151.
-     - `high`: Values from 49152 to 65535.
+### 5. Reset Signal Coverage (`reset_coverage`)
+Tracks the occurrences of the reset signal (`rst_n`) to ensure proper behavior when the system is reset.
+  
+</details>
 
-5. **Reset Signal Coverage (`reset_coverage`):**
-   Tracks the occurrences of the reset signal (`rst_n`) to ensure proper behavior when the system is reset.
+
+
+
 
 </details>
 
