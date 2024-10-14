@@ -42,11 +42,6 @@ Our FIFO verification environment follows a layered architecture and consists of
 
 - **Test Bench Functionality Summary**
     - The testbench orchestrates the test and connects all components in the environment, generating stimulus sequences, handling driver and monitor interactions, and verifying the DUT (Device Under Test) through golden model comparison
-
-
-
-
-
 - **Driver**
   - Sends transactions to the DUT by converting higher-level sequences into low-level signals, initiating read and write operations and controlling enable signals (`wr_en`, `rd_en`).
 
@@ -67,45 +62,19 @@ Our FIFO verification environment follows a layered architecture and consists of
 
 - **Test**
   - Defines scenarios to verify DUT behavior under different conditions, including boundary cases, overflow/underflow conditions, and normal operations.
+ 
+- **FIFO Transaction **
 
-</details>
+   - The `FIFO_transaction_pkg` package defines a transaction class that models the behavior of individual FIFO operations (read/write transactions). The transaction class incorporates randomization to test the FIFO under various conditions.
 
 
 
+- **Functional Coverage**
 
+   - The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package.
 
-## FIFO Transaction Package (`FIFO_transaction_pkg`)
-
-The `FIFO_transaction_pkg` package defines a transaction class that models the behavior of individual FIFO operations (read/write transactions). The transaction class incorporates randomization to test the FIFO under various conditions.
-
-### Key Components of `FIFO_transaction_pkg`:
-
-- **Parameters:**
-  - `FIFO_WIDTH`: Defines the width (number of bits) of each data element (default 16 bits).
-  - `FIFO_DEPTH`: Defines the FIFO's depth, i.e., the number of elements it can store (default 8 elements).
-
-- **Randomized Fields:**
-  - `data_in`: Represents the input data to the FIFO, randomized to generate diverse scenarios.
-  - `wr_en`: Write enable signal, randomized to control the write operation.
-  - `rd_en`: Read enable signal, randomized to control the read operation.
-  - `rst_n`: Reset signal, randomly asserted to check the proper reset behavior.
-
-- **Constraints:**
-  The following constraints control the randomization of key signals:
-  - `rst_n` is distributed such that it is high (`1`) 90% of the time and low (`0`) 10% of the time.
-  - `wr_en` and `rd_en` are controlled by the distribution values `WR_EN_ON_DIST` and `RD_EN_ON_DIST`, which represent the likelihood of write and read operations being enabled.
-
-## Functional Coverage
-
-The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package.
-
-### Key Components of `coverage_pkg`:
-
-The `coverage_pkg` defines several coverage groups to capture the most critical scenarios related to FIFO operation. These groups are designed to monitor the behavior of control signals such as write/read enables, full/empty status, and data input ranges.
-
-#### Coverage Groups:
-
-1. **Write Enable, Full, and Almost Full Coverage (`wr_full_coverage`):**
+- Coverage Groups:
+   - **Write Enable, Full, and Almost Full Coverage (`wr_full_coverage`):**
    This group tracks how the write enable (`wr_en`) signal interacts with the `full` and `almostfull` status signals. It also tracks the cross-coverage between these signals to ensure full exploration of edge cases.
 
    - `wr_en_cp`: Coverage point for the write enable signal.
@@ -137,6 +106,14 @@ The `coverage_pkg` defines several coverage groups to capture the most critical 
 
 5. **Reset Signal Coverage (`reset_coverage`):**
    Tracks the occurrences of the reset signal (`rst_n`) to ensure proper behavior when the system is reset.
+
+</details>
+
+
+
+
+
+
 
 
 
