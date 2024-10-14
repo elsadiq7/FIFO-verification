@@ -4,7 +4,8 @@ This repository contains the test environment and test cases designed for verify
 
 <details>
   <summary>1- FIFO Test plan</summary>
-This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for **Label**, **Description**, **Stimulus Generation**, **Functional Coverage**, and **Functionality Check**. These test cases cover various conditions related to FIFO behavior, including states like `almostfull`, `empty`, `overflow`, and `underflow`.
+This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for Label, Description, Stimulus Generation,
+  Functional Coverage, and Functionality Check. These test cases cover various conditions related to FIFO behavior, including states like almostfull, empty, overflow, and underflow.
 
 ## Test Case Overview
 
@@ -70,7 +71,8 @@ Our FIFO verification environment follows a layered architecture and consists of
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
+<details>
+  <details>
   <summary>3- Bugs Found</summary>
 During the course of verification, the following bugs were identified and fixed:
 1. **Write Acknowledgment Not Resetting (`wr_ack`)**:
