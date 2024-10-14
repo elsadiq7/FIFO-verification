@@ -36,67 +36,64 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<details>
-  <summary>2- Verification Environment Overview</summary>
-
-
+<details>  
+<summary>2-Verification Environment Overview</summary>
 Our FIFO verification environment follows a layered architecture and consists of the following components:
 
-# FIFO Test Bench Functionality Summary 📝
-
+### FIFO Test Bench Functionality Summary
 The testbench orchestrates the test and connects all the components in the environment. It generates various stimulus sequences, handles interactions between drivers and monitors, and checks the functional correctness of the DUT (Device Under Test) through a golden model comparison.
 
- ## Key Functions
+#### Key Functions
 
-### 1. **Clock Signal Generation ⏰**
+##### 1. **Clock Signal Generation ⏰**
 - Generates a clock signal (`clk`) that toggles every 10 time units to synchronize the operations of the FIFO.
 
-### 2. **FIFO Model and Pointer Initialization 🛠️**
-- Defines golden model FIFO memory and pointers, including:
-  - **Memory**: Stores FIFO data for comparison.
-  - **Write Pointer**: Tracks the position for writing data.
-  - **Read Pointer**: Tracks the position for reading data.
+##### 2. **FIFO Model and Pointer Initialization ️**
+- Defines golden model FIFO memory and pointers, including:  
+  - **Memory**: Stores FIFO data for comparison.  
+  - **Write Pointer**: Tracks the position for writing data.  
+  - **Read Pointer**: Tracks the position for reading data.  
   - **Count**: Indicates the number of elements currently in the FIFO.
 
-### 3. **DUT Instantiation**
+##### 3. **DUT Instantiation**
 - Instantiates the Design Under Test (DUT) FIFO module and connects it to the test bench.
 
-### 4. **Test Class Initialization 📚**
+##### 4. **Test Class Initialization**
 - Creates an instance of the test class that encapsulates the testing logic and scenarios.
 
-### 5. **Simulation Setup and Execution 🚀**
+##### 5. **Simulation Setup and Execution**
 - Sets up the simulation environment and runs the test using a fork-join construct, which allows simultaneous operations for dynamic updates.
 
-### 6. **Dynamic Data Assignment 🔄**
-- Continuously updates golden model values and DUT outputs during simulation:
-  - Copies data from the test environment to the golden model.
+##### 6. **Dynamic Data Assignment**
+- Continuously updates golden model values and DUT outputs during simulation:  
+  - Copies data from the test environment to the golden model.  
   - Ensures synchronization between the golden model and DUT's current state.
 
-### 7. **Waveform Dumping 📊**
+##### 7. **Waveform Dumping**
 - Dumps simulation waveforms to a VCD file for analysis and debugging, allowing users to visualize the signal behavior over time.
 
-  
+#### 2. **Driver**
+The driver sends transactions to the DUT by converting higher-level sequences into low-level signals. It initiates read and write operations on the FIFO and controls the enable signals (`wr_en`, `rd_en`) based on stimulus generation.
 
+#### 3. **Monitor**
+The monitor passively observes the DUT's output. It captures the behavior of signals such as `data_out`, `wr_ack`, `overflow`, `underflow`, `full`, `empty`, `almostfull`, and `almostempty`. The monitor checks whether these signals behave according to the expected protocol.
 
+#### 4. **Scoreboard**
+The scoreboard compares the expected results against the actual output from the DUT. It verifies the functionality by checking the DUT's output against a reference or golden model.
 
+#### 5. **Transaction**
+A transaction represents a single unit of operation that includes write or read requests sent to the FIFO. It contains relevant data and control information, such as `data_in`, `wr_en`, `rd_en`, and the expected results for read or write operations.
 
+#### 6. **Environment (Env)**
+The environment integrates all components, such as the driver, monitor, and scoreboard. It handles stimulus generation, manages response checking, and ensures that the functional coverage is achieved.
 
+#### 7. **Stimulus Generation**
+Stimulus sequences are used to drive the FIFO through various test scenarios. Constraints are applied on signals like `wr_en`, `rd_en`, `rst`, and `clk` to ensure that the FIFO is exercised under a range of conditions.
 
-2. **Driver:** The driver sends transactions to the DUT by converting higher-level sequences into low-level signals. It initiates read and write operations on the FIFO and controls the enable signals (`wr_en`, `rd_en`) based on stimulus generation.
-
-3. **Monitor:** The monitor passively observes the DUT's output. It captures the behavior of signals such as `data_out`, `wr_ack`, `overflow`, `underflow`, `full`, `empty`, `almostfull`, and `almostempty`. The monitor checks whether these signals behave according to the expected protocol.
-
-4. **Scoreboard:** The scoreboard compares the expected results against the actual output from the DUT. It verifies the functionality by checking the DUT's output against a reference or golden model.
-
-5. **Transaction:** A transaction represents a single unit of operation that includes write or read requests sent to the FIFO. It contains relevant data and control information, such as `data_in`, `wr_en`, `rd_en`, and the expected results for read or write operations.
-
-6. **Environment (Env):** The environment integrates all components, such as the driver, monitor, and scoreboard. It handles stimulus generation, manages response checking, and ensures that the functional coverage is achieved.
-
-7. **Stimulus Generation:** Stimulus sequences are used to drive the FIFO through various test scenarios. Constraints are applied on signals like `wr_en`, `rd_en`, `rst`, and `clk` to ensure that the FIFO is exercised under a range of conditions.
-
-8. **Test:** The test defines specific scenarios to verify the DUT's behavior under different conditions, such as boundary cases (full/empty states), overflow/underflow conditions, and normal operational scenarios. Tests check for correct functionality and ensure that edge cases are handled gracefully.
-  
+#### 8. **Test**
+The test defines specific scenarios to verify the DUT's behavior under different conditions, such as boundary cases (full/empty states), overflow/underflow conditions, and normal operational scenarios. Tests check for correct functionality and ensure that edge cases are handled gracefully.
 </details>
+
 
 
 
