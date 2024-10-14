@@ -2,9 +2,10 @@
 
 This repository contains the test environment and test cases designed for verifying the FIFO (First-In-First-Out) memory behavior. The environment includes a well-structured **testbench**, with components such as **drivers**, **monitors**, and **scoreboards** that facilitate a comprehensive verification flow. Below is a high-level description of the verification environment, including coverage, random testing, and the corresponding test cases.
 
-
-
-# 1-FIFO Test plan 
+<details>
+  <summary># 1-FIFO Test plan</summary>
+  
+ # 1-FIFO Test plan 
 
 This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for **Label**, **Description**, **Stimulus Generation**, **Functional Coverage**, and **Functionality Check**. These test cases cover various conditions related to FIFO behavior, including states like `almostfull`, `empty`, `overflow`, and `underflow`.
 
@@ -25,6 +26,11 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 | FIFO_11 | Coverage of data in bins for values `< 0.25`, `0.5`, `0.75`, `1` of max value.                         | N/A                                                                                                          | Coverage of data bins `[<0.25, 0.5, 0.75, 1]` of max value.                             | N/A                                    |
 | FIFO_12 | Check `!(intf.underflow === 1 && intf.overflow === 1)`.                                                | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
 | FIFO_13 | Check `!(intf.full === 1 && intf.empty === 1)`.                                                        | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
+  
+</details>
+
+
+
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
