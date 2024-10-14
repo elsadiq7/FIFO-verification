@@ -35,35 +35,41 @@ Our FIFO verification environment follows a layered architecture and consists of
 
 ## 1. **Testbench Overview**
 The testbench orchestrates the test and connects all the components in the environment. It generates various stimulus sequences, handles interactions between drivers and monitors, and checks the functional correctness of the DUT (Device Under Test) through a golden model comparison.
+<details>
+  <summary>Click to expand!</summary>
+  
+ ## Key Functions
 
-## Key Functions
-
-### 2. **Clock Signal Generation ⏰**
+### 1. **Clock Signal Generation ⏰**
 - Generates a clock signal (`clk`) that toggles every 10 time units to synchronize the operations of the FIFO.
 
-### 3. **FIFO Model and Pointer Initialization 🛠️**
+### 2. **FIFO Model and Pointer Initialization 🛠️**
 - Defines golden model FIFO memory and pointers, including:
   - **Memory**: Stores FIFO data for comparison.
   - **Write Pointer**: Tracks the position for writing data.
   - **Read Pointer**: Tracks the position for reading data.
   - **Count**: Indicates the number of elements currently in the FIFO.
 
-### 4. **DUT Instantiation**
+### 3. **DUT Instantiation**
 - Instantiates the Design Under Test (DUT) FIFO module and connects it to the test bench.
 
-### 5. **Test Class Initialization 📚**
+### 4. **Test Class Initialization 📚**
 - Creates an instance of the test class that encapsulates the testing logic and scenarios.
 
-### 6. **Simulation Setup and Execution 🚀**
+### 5. **Simulation Setup and Execution 🚀**
 - Sets up the simulation environment and runs the test using a fork-join construct, which allows simultaneous operations for dynamic updates.
 
-### 7. **Dynamic Data Assignment 🔄**
+### 6. **Dynamic Data Assignment 🔄**
 - Continuously updates golden model values and DUT outputs during simulation:
   - Copies data from the test environment to the golden model.
   - Ensures synchronization between the golden model and DUT's current state.
 
-### 8. **Waveform Dumping 📊**
+### 7. **Waveform Dumping 📊**
 - Dumps simulation waveforms to a VCD file for analysis and debugging, allowing users to visualize the signal behavior over time.
+
+  
+</details>
+
 
 
 
