@@ -2,6 +2,78 @@
 
 This repository contains the test environment and test cases designed for verifying the FIFO (First-In-First-Out) memory behavior. The environment includes a well-structured **testbench**, with components such as **drivers**, **monitors**, and **scoreboards** that facilitate a comprehensive verification flow. Below is a high-level description of the verification environment, including coverage, random testing, and the corresponding test cases.
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .slider {
+            width: 300px;
+            height: 50px;
+            background-color: #ddd;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+
+        .slider:hover {
+            background-color: #bbb; /* Change color on hover */
+        }
+
+        .details {
+            display: none;
+            position: absolute;
+            top: 60px; /* Position below the slider */
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider:hover .details {
+            display: block; /* Show details on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        Hover over me
+        <div class="details">
+            Here are the details that appear on hover.
+        </div>
+    </div>
+</body>
+</html>
+
+# FIFO Test Cases
+
+This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for **Label**, **Description**, **Stimulus Generation**, **Functional Coverage**, and **Functionality Check**. These test cases cover various conditions related to FIFO behavior, including states like `almostfull`, `empty`, `overflow`, and `underflow`.
+
+## Test Case Overview
+
+| Label   | Description                                                                                          | Stimulus Generation                                                                                          | Functional Coverage                                                                      | Functionality Check                    |
+|---------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|----------------------------------------|
+| FIFO_1  | In case of `rst=0`, `{data_out, full, almostfull, overflow, underflow, wr_ack, almostempty}` must be zero. `{empty}` must be one, else no effect. | Constraint on reset: 90% one, 10% zero.                                                                      | No functional coverage specified for this test.                                           | Check output against golden model.     |
+| FIFO_2  | In case of `wr_en && almostfull == 0 && full == 0` at next posedge clock (check at negedge), `data[wrt_ptr-1] == data_in`, `wr_ack == 1`, `overflow == 0`, `full == 0`, `almostfull == 1` if there is one place to write only. | Constraint on `wr_en`: 60% high, 40% low.                                                                  | Cross coverage between `wr_en && full` and `almostfull`, labeled `p1`.                   | Check output against golden model.     |
+| FIFO_3  | In case of `wr_en && almostfull == 1 && full == 0` at next posedge clock (check at negedge), `data[wrt_ptr-1] == data_in`, `wr_ack == 1`, `overflow == 0`, `almostfull == 0`, `full == 1`. | Constraint on `wr_en`: 60% high, 40% low.                                                                  | Cross coverage between `wr_en && full` and `almostfull`, labeled `p1`.                   | Check output against golden model.     |
+| FIFO_4  | In case of `wr_en && almostfull == 0 && full == 1` at next posedge clock (check at negedge), `data[wrt_ptr-1] == data_in` has no change, `wr_ack == 0`, `overflow == 1`, `almostfull == 0`, `full == 1`. | Constraint on `wr_en`: 60% high, 40% low.                                                                  | Cross coverage between `wr_en && full` and `almostfull`, labeled `p1`.                   | Check output against golden model.     |
+| FIFO_5  | In case of `almostfull == 1 && full == 1`, assert error.                                               | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p3`.               |
+| FIFO_6  | In case of `rd_en && almost_empty == 0 && empty == 0` at next posedge clock (check at negedge), `data_out == mem[rd_ptr-1]`, `underflow == 0`, `empty == 0`, `almostempty == 1` if there is one place to read only. | Constraint on `rd_en`: 60% high, 40% low.                                                                  | Cross coverage between `rd_en && empty` and `almostempty`, labeled `p2`.                 | Check output against golden model.     |
+| FIFO_7  | In case of `rd_en && almost_empty == 1 && empty == 0` at next posedge clock (check at negedge), `data_out == mem[rd_ptr-1]`, `underflow == 1`, `empty == 1`, `almostempty == 0`. | Constraint on `rd_en`: 60% high, 40% low.                                                                  | Cross coverage between `rd_en && empty` and `almostempty`, labeled `p2`.                 | Check output against golden model.     |
+| FIFO_8  | In case of `rd_en && almost_empty == 0 && empty == 1` at next posedge clock (check at negedge), `data_out == mem[rd_ptr-1]`, `underflow == 1`, `empty == 1`, `almostempty == 0`. | Constraint on `rd_en`: 60% high, 40% low.                                                                  | Cross coverage between `rd_en && empty` and `almostempty`, labeled `p2`.                 | Check output against golden model.     |
+| FIFO_9  | In case of `almostempty == 1 && empty == 1`, assert error.                                              | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p4`.               |
+| FIFO_10 | In case of `write == 1` and `read == 1`, deal as FIFO_2_3_4_5.                                          | Mix of `rd_en`: 60%, `wr_en`: 40%.                                                                          | Cross coverage between `wr_en && rd_en`, labeled `p3`.                                   | Check output against golden model.     |
+| FIFO_11 | Coverage of data in bins for values `< 0.25`, `0.5`, `0.75`, `1` of max value.                         | N/A                                                                                                          | Coverage of data bins `[<0.25, 0.5, 0.75, 1]` of max value.                             | N/A                                    |
+| FIFO_12 | Check `!(intf.underflow === 1 && intf.overflow === 1)`.                                                | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
+| FIFO_13 | Check `!(intf.full === 1 && intf.empty === 1)`.                                                        | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
+
+
 ## Verification Environment Overview
 
 Our FIFO verification environment follows a layered architecture and consists of the following components:
@@ -89,33 +161,8 @@ The `coverage_pkg` defines several coverage groups to capture the most critical 
 
 
 
-# FIFO Test Cases
 
-This table outlines various test cases for FIFO (First-In-First-Out) memory, with fields for **Label**, **Description**, **Stimulus Generation**, **Functional Coverage**, and **Functionality Check**. These test cases cover various conditions related to FIFO behavior, including states like `almostfull`, `empty`, `overflow`, and `underflow`.
 
-## Test Case Overview
-
-| Label   | Description                                                                                          | Stimulus Generation                                                                                          | Functional Coverage                                                                      | Functionality Check                    |
-|---------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|----------------------------------------|
-| FIFO_1  | In case of `rst=0`, `{data_out, full, almostfull, overflow, underflow, wr_ack, almostempty}` must be zero. `{empty}` must be one, else no effect. | Constraint on reset: 90% one, 10% zero.                                                                      | No functional coverage specified for this test.                                           | Check output against golden model.     |
-| FIFO_2  | In case of `wr_en && almostfull == 0 && full == 0` at next posedge clock (check at negedge), `data[wrt_ptr-1] == data_in`, `wr_ack == 1`, `overflow == 0`, `full == 0`, `almostfull == 1` if there is one place to write only. | Constraint on `wr_en`: 60% high, 40% low.                                                                  | Cross coverage between `wr_en && full` and `almostfull`, labeled `p1`.                   | Check output against golden model.     |
-| FIFO_3  | In case of `wr_en && almostfull == 1 && full == 0` at next posedge clock (check at negedge), `data[wrt_ptr-1] == data_in`, `wr_ack == 1`, `overflow == 0`, `almostfull == 0`, `full == 1`. | Constraint on `wr_en`: 60% high, 40% low.                                                                  | Cross coverage between `wr_en && full` and `almostfull`, labeled `p1`.                   | Check output against golden model.     |
-| FIFO_4  | In case of `wr_en && almostfull == 0 && full == 1` at next posedge clock (check at negedge), `data[wrt_ptr-1] == data_in` has no change, `wr_ack == 0`, `overflow == 1`, `almostfull == 0`, `full == 1`. | Constraint on `wr_en`: 60% high, 40% low.                                                                  | Cross coverage between `wr_en && full` and `almostfull`, labeled `p1`.                   | Check output against golden model.     |
-| FIFO_5  | In case of `almostfull == 1 && full == 1`, assert error.                                               | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p3`.               |
-| FIFO_6  | In case of `rd_en && almost_empty == 0 && empty == 0` at next posedge clock (check at negedge), `data_out == mem[rd_ptr-1]`, `underflow == 0`, `empty == 0`, `almostempty == 1` if there is one place to read only. | Constraint on `rd_en`: 60% high, 40% low.                                                                  | Cross coverage between `rd_en && empty` and `almostempty`, labeled `p2`.                 | Check output against golden model.     |
-| FIFO_7  | In case of `rd_en && almost_empty == 1 && empty == 0` at next posedge clock (check at negedge), `data_out == mem[rd_ptr-1]`, `underflow == 1`, `empty == 1`, `almostempty == 0`. | Constraint on `rd_en`: 60% high, 40% low.                                                                  | Cross coverage between `rd_en && empty` and `almostempty`, labeled `p2`.                 | Check output against golden model.     |
-| FIFO_8  | In case of `rd_en && almost_empty == 0 && empty == 1` at next posedge clock (check at negedge), `data_out == mem[rd_ptr-1]`, `underflow == 1`, `empty == 1`, `almostempty == 0`. | Constraint on `rd_en`: 60% high, 40% low.                                                                  | Cross coverage between `rd_en && empty` and `almostempty`, labeled `p2`.                 | Check output against golden model.     |
-| FIFO_9  | In case of `almostempty == 1 && empty == 1`, assert error.                                              | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p4`.               |
-| FIFO_10 | In case of `write == 1` and `read == 1`, deal as FIFO_2_3_4_5.                                          | Mix of `rd_en`: 60%, `wr_en`: 40%.                                                                          | Cross coverage between `wr_en && rd_en`, labeled `p3`.                                   | Check output against golden model.     |
-| FIFO_11 | Coverage of data in bins for values `< 0.25`, `0.5`, `0.75`, `1` of max value.                         | N/A                                                                                                          | Coverage of data bins `[<0.25, 0.5, 0.75, 1]` of max value.                             | N/A                                    |
-| FIFO_12 | Check `!(intf.underflow === 1 && intf.overflow === 1)`.                                                | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
-| FIFO_13 | Check `!(intf.full === 1 && intf.empty === 1)`.                                                        | N/A                                                                                                          | N/A                                                                                      | Assertion labeled `p2`.               |
-
-## Key Aspects
-
-1. **Stimulus Generation:** Conditions for clock signals (`posedge`, `negedge`), enable signals (`wr_en`, `rd_en`), and their percentages of high and low states.
-2. **Functional Coverage:** Ensures cross-coverage between key signals like `wr_en`, `rd_en`, and their interaction with `empty`, `almostempty`, `almostfull`, and `full` states.
-3. **Functionality Check:** Describes checks against a golden model or assertions on error conditions.
 
 ### Bugs Found:
 
