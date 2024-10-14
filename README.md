@@ -63,21 +63,18 @@ Our FIFO verification environment follows a layered architecture and consists of
 - **Test**
   - Defines scenarios to verify DUT behavior under different conditions, including boundary cases, overflow/underflow conditions, and normal operations.
  
-- **FIFO Transaction **
+- **FIFO Transaction**
 
    - The `FIFO_transaction_pkg` package defines a transaction class that models the behavior of individual FIFO operations (read/write transactions). The transaction class incorporates randomization to test the FIFO under various conditions.
 
 
 
 # Functional Coverage
-The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package.
-<details>
-  <summary>Click to expand!</summary>
-  
-## Coverage Groups
+  -  The coverage analysis is a key component of the verification environment, ensuring that all critical functional scenarios and corner cases of the FIFO design are sufficiently verified. The coverage is captured in multiple categories, as outlined in the `coverage_pkg` package.
 
-### 1. Write Enable, Full, and Almost Full Coverage (`wr_full_coverage`)
-This group tracks how the write enable (`wr_en`) signal interacts with the `full` and `almostfull` status signals. It also monitors the cross-coverage between these signals to ensure full exploration of edge cases.
+  
+  - Coverage Groups:
+         - Write Enable, Full, and Almost Full Coverage (`wr_full_coverage`):This group tracks how the write enable (`wr_en`) signal interacts with the `full` and `almostfull` status signals. It also monitors the cross-coverage between these signals to ensure full exploration of edge cases.
 
 - **Coverage Points:**
   - `wr_en_cp`: Coverage point for the write enable signal.
