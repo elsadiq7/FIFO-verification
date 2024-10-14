@@ -37,9 +37,8 @@ This table outlines various test cases for FIFO (First-In-First-Out) memory, wit
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <details>
-  <summary>Click to expand!</summary>
-  
-## 2-Verification Environment Overview
+  <summary>2- Verification Environment Overview</summary>
+
 
 Our FIFO verification environment follows a layered architecture and consists of the following components:
 
