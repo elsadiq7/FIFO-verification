@@ -3,7 +3,7 @@
 This repository contains the test environment and test cases designed for verifying the FIFO (First-In-First-Out) memory behavior. The environment includes a well-structured **testbench**, with components such as **drivers**, **monitors**, and **scoreboards** that facilitate a comprehensive verification flow. Below is a high-level description of the verification environment, including coverage, random testing, and the corresponding test cases.
 
 <details>
-  <summary># 1-FIFO Test plan</summary>
+  <summary>1- FIFO Test plan</summary>
   
  # 1-FIFO Test plan 
 
