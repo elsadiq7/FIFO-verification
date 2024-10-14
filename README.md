@@ -104,15 +104,15 @@ Our FIFO verification environment follows a layered architecture and consists of
 <details>
   <summary>1- Bugs Found</summary>
      During the course of verification, the following bugs were identified and fixed:
-1. **Write Acknowledgment Not Resetting (`wr_ack`)**:
+- **Write Acknowledgment Not Resetting (`wr_ack`)**:
    - Issue: The `wr_ack` signal was not being reset properly after write operations, causing incorrect handshaking behavior.
    - Fix: Ensured that `intf.wr_ack <= 0;` was explicitly reset after write transactions.
 
-2. **Overflow Signal Not Resetting (`overflow`)**:
+- **Overflow Signal Not Resetting (`overflow`)**:
    - Issue: The `overflow` signal was not being reset after handling an overflow condition, leading to incorrect overflow detection in subsequent cycles.
    - Fix: Modified the design to explicitly reset `intf.overflow <= 0;` when reseting handling an overflow.
 
-3. **Read Pointer and Write Pointer Logic Issue**:
+- **Read Pointer and Write Pointer Logic Issue**:
    - Issue: There was a logic error where the design did not properly check the condition `rd_ptr != wr_ptr` before allowing certain operations, which led to erroneous data reads/writes when pointers were equal.
    - Fix: Incorporated a check to ensure that `rd_ptr != wr_ptr` before proceeding with read/write operations to avoid erroneous FIFO operations.
 
