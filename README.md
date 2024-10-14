@@ -119,8 +119,16 @@ During the course of verification, the following bugs were identified and fixed:
 These bugs were discovered through the use of constrained random testing and functional coverage, demonstrating the importance of coverage-driven verification in finding corner cases and subtle design issues.
 </details>
 
-2- images
-  
+
+<details>
+  <summary>2- images</summary>
+
+  - ![test case example](https://github.com/elsadiq7/FIFO-verification/blob/main/images/test_exmple.png).
+  - ![passed \& failed test caeses](https://github.com/elsadiq7/FIFO-verification/blob/main/images/test_cases.png).
+  - ![assserations coverage](https://github.com/elsadiq7/FIFO-verification/blob/main/images/assertions.png).
+  - ![group coverages](https://github.com/elsadiq7/FIFO-verification/blob/main/images/group_coverage.png).
+  - ![code coverage](https://github.com/elsadiq7/FIFO-verification/blob/main/images/code_coverage.png).
+</details>
 
 <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
